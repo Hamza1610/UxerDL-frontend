@@ -1,6 +1,6 @@
 import './App.css';
 
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 // components
 import Home from "./components/Home";
 import List from "./components/List";
@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <Header />
       <div className='contents'>
-        <Switch>
+        <Routes>
           <Route exact path='/'>
             <Home />
           </Route>
@@ -33,7 +33,7 @@ function App() {
           <Route  path=''>
             <NotFound />
           </Route>
-        </Switch>
+        </Routes>
       </div>
       <Footer />
     </div>
