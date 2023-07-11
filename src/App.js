@@ -1,42 +1,29 @@
-import './App.css';
-
-import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
-// components
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import List from "./components/List";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Upload from "./components/Upload";
 import Search from "./components/Search";
-import  NotFound from './components/NotFound';
+import NotFound from "./components/NotFound";
 
-function App() {  
-
+import "./App.css";
+import "./components/Home.css";
+function App() {
   return (
     <Router>
-    <div className="App">
-      <Header />
-      <div className='contents'>
+      <div className="App">
+        <Header />
         <Routes>
-          <Route exact path='/'>
-            <Home />
-          </Route>
-          <Route exact path='/api/'>
-            <List />
-          </Route>
-          <Route exact path='/api/search'>
-            <Search />
-          </Route>
-          <Route exact path='/api/upload'>
-            <Upload />
-          </Route>
-          <Route  path=''>
-            <NotFound />
-          </Route>
+          <Route path="/" exact component={Home} />
+          <Route path="/api/" exact component={List} />
+          <Route path="/api/search" exact component={Search} />
+          <Route path="/api/upload" exact component={Upload} />
+          <Route path="*" component={NotFound} />
         </Routes>
+        <Footer />
       </div>
-      <Footer />
-    </div>
     </Router>
   );
 }
