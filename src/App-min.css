@@ -31,18 +31,19 @@
       width: 100vw;
     }
     .logo {
-      height: 250px;
-      width: 300px;
+      height: 50px;
+      width: 100px;
     }
     .Nav-bar {
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
+      width: 150px;
     }
     .Nav-bar div {
-      border-radius: 10px;
-      margin: 10px;
-      padding: 10px;
+      border-radius: 5px;
+      margin: 5px;
+      padding: 5px;
     }
     .Nav-bar div:hover {
       color: black;
@@ -59,7 +60,8 @@
       transition: ease-in 0.7s;
     }
     .menuIcon {
-      height: 30px;
+      height: 5vh;
+      width: 5vw;
     }
     /* Search component */
     .searchForm {
@@ -67,17 +69,17 @@
     }
     .searchInput,
     .searchButton {
-      margin: 10px 2px;
-      height: 30px;
-      font-size: 20px;
-      border-radius: 10px;
+      margin: 5px 2px;
+      height: 10px;
+      font-size: 10px;
+      border-radius: 5px;
       border-style: groove;
     }
     .searchInput {
-      width: 200px;
+      width: 150px;
     }
     .searchButton {
-      width: 70px;
+      width: 40px;
     }
     .searchButton:hover {
       background-color: rgb(147, 252, 147);
@@ -112,7 +114,7 @@
       opacity: 0.5; /* Corrected opacity value */
       transition: opacity 0.3s ease-in-out;
       height: 45vh;
-      width: 250px;
+      width: 200px;
       background: rgb(34, 195, 126);
       background: radial-gradient(
         circle,
@@ -123,16 +125,16 @@
       align-items: center;
       flex-direction: column;
       justify-content: center;
-      margin: 10px;
-      border-radius: 10px;
+      margin: 5px;
+      border-radius: 5px;
       color: black;
     }
     .card-div.show {
-      opacity: 1;
+      opacity: 0.5;
     }
     .card-div:hover {
       height: 50vh;
-      width: 300px;
+      width: 200px;
       transition: ease-in-out 0.5s;
     }
     .card-content {
@@ -144,11 +146,11 @@
       justify-content: center;
     }
     .download-button {
-      width: 80px;
-      height: 30px;
+      width: 60px;
+      height: 20px;
       font-weight: bolder;
       border-style: groove;
-      border-radius: 10px;
+      border-radius: 5px;
     }
     .download-button:hover {
       color: white;
@@ -160,7 +162,7 @@
       text-align: left;
       font-size: large;
       font-family: sans-serif;
-      height: 150px;
+      height: 100px;
     }
     .book-detail-div {
       display: block;
@@ -182,15 +184,15 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 500px;
-      width: 600px;
+      height: 100%vh;
+      width: 100vw;
       background: rgb(34, 195, 126);
       background: radial-gradient(
         circle,
         rgba(34, 195, 126, 1) 0%,
         rgba(225, 235, 132, 1) 100%
       );
-      border-radius: 10px;
+      border-radius: 5px;
     }
     .fileName,
     .bookName,
