@@ -6,7 +6,7 @@ const Card = (props) => {
     
       console.log("Function clicked");
       try {
-          const response = await fetch('/api/download', {
+          const response = await fetch('https://uxerdl-backend.onrender.com/api/download', {
             method: 'POST',
             body: JSON.stringify({ _id: listDetails._id }),
             headers: {

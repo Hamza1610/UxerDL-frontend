@@ -25,7 +25,7 @@ const Upload = () => {
         Data.append("bookDescription", bookDescription);
         Data.append("UploaderName", UploaderName);
 
-        const response = await fetch('/api/upload',{
+        const response = await fetch('https://uxerdl-backend.onrender.com/api/upload',{
             method : 'POST',
             body : Data,
         })

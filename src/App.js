@@ -1,5 +1,7 @@
+
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import { BrowserRouter as Router, Routes as Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import List from "./components/List";
 import Header from "./components/Header";
@@ -8,20 +10,19 @@ import Upload from "./components/Upload";
 import Search from "./components/Search";
 import NotFound from "./components/NotFound";
 
-import "./App.css";
-import "./components/Home.css";
+
 function App() {
   return (
     <Router>
       <div className="App">
         <Header />
-        <Routes>
-          <Route path="/" exact component={Home} />
-          <Route path="/api/" exact component={List} />
-          <Route path="/api/search" exact component={Search} />
-          <Route path="/api/upload" exact component={Upload} />
-          <Route path="*" component={NotFound} />
-        </Routes>
+        <Switch>
+          <Route path="/" exact Component={Home} />
+          <Route path="/api/" exact Component={List} />
+          <Route path="/api/search" exact Component={Search} />
+          <Route path="/api/upload" exact Component={Upload} />
+          <Route path="*" Component={NotFound} />
+        </Switch>
         <Footer />
       </div>
     </Router>

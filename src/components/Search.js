@@ -14,7 +14,7 @@ const Search = () => {
       setLoading(false);
     }, 2000);
     try {
-      const response = await fetch('/api/search', {
+      const response = await fetch('https://uxerdl-backend.onrender.com/api/search', {
         method: 'POST',
         body: JSON.stringify({ searchedFile: searchedFile }),
         headers: {
