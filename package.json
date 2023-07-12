@@ -1,5 +1,5 @@
 {
-  "proxy": "http://localhost:4000/api/",
+  "proxy": "https://uxerdl-backend.onrender.com",
   "name": "UxerDL",
   "version": "0.1.0",
   "private": true,

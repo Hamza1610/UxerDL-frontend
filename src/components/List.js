@@ -17,7 +17,7 @@ const List = () => {
     },[])
     const ListsFetch = async () => {
         try {
-            const response = await fetch('/api/');
+            const response = await fetch('https://uxerdl-backend.onrender.com/api/');
             const json = await response.json();
             setLists(json);
             console.log(json);
