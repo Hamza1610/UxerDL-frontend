@@ -1,5 +1,6 @@
 
 import './Home.css';
+import './Home.mini.mobile.css';
 import me from './me.png';
 import {Link} from 'react-router-dom';
 
