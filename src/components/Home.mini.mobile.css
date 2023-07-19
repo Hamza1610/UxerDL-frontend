@@ -1,0 +1,71 @@
+@media only screen and (max-width: 750px) {
+    /* This CSS will only apply to screens with a max-width of 600px */
+    .Home-div {
+
+    }
+    .home-header {
+
+    }
+    .home-header h1 {
+
+    }
+    .home-header p {
+
+    }
+    
+    .home-content {
+  
+    }
+    .about-div {
+
+    }
+    .about-home {
+
+    }
+    .about-home {
+        font-size: 1.3em;
+    }
+    .features-div {
+
+    }
+    .features-home {
+   
+    }
+    .feature {
+
+    }
+    .feature-image {
+
+    }
+    .explore-button {
+
+    }
+    .explore-button:hover {
+
+    }
+    .developer-div {
+        height: 100vh; 
+    }
+    .developer-home {
+
+    }
+    .developer-content {
+        display: flex;
+        flex-direction: column;
+    }
+    .developer-image {
+        width: 200PX;
+        height: 250px;
+    }
+    .developer-intro {
+
+        
+    }
+    .employ-me {
+
+    }
+    .message-platform {
+
+    }
+
+}  

@@ -1,0 +1,184 @@
+@media only screen and (max-width: 750px) {
+    /* This CSS will only apply to screens with a max-width of 600px */
+  .App {
+  
+    text-align: center;
+    opacity: 10px; 
+    backdrop-filter: blur(10px);
+    z-index: 0;
+  }
+  /* Overall div */
+  .App-header {
+    position: sticky;
+    top: 0;
+    background-color: #282c34;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-size: calc(5px + 2vmin);
+    color: white;
+    height: 15vh;
+    width: 100vw;
+  }
+  .logo {
+    height: 150px;
+    width: 200px;
+  }
+  .Nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .Nav-bar div {
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+  }
+  .Nav-bar div:hover {
+  
+  }
+  .Nav-bar div a {
+  
+  }
+  .Nav-bar div a:hover {
+  
+  }
+  .menuIcon {
+  
+  }
+  /* Search component */
+  .searchForm {
+  
+  }
+  .searchInput, .searchButton{
+  
+  }
+  .searchInput {
+  
+  }
+  .searchButton {
+  
+  }
+  .searchButton:hover {
+  
+  }
+  .search-viewer-div {
+  
+  
+  }
+  /* List component */
+  .list-div {
+  
+  }
+  .listRow {
+  
+    
+  }
+  /* Card components */
+  .card-div {
+  }
+  .card-div.show {
+  
+  }
+  .card-div:hover {
+  
+  }
+  .card-content {
+  
+  }
+  .download-button {
+  
+  }
+  .download-button:hover {
+    
+  }
+  .book-destription-div {
+  
+  }
+  .book-detail-div {
+  
+  }
+  
+  /* Upload component */
+  .form-div {
+  
+  }
+  .uploadForm {
+  
+  
+  }
+  .fileName, .bookName, .bookCategory, .UploaderName {
+  
+  }
+  .bookDescription {
+  
+  }
+  .submitButton {
+  
+  
+  }
+  .submitButton:hover {
+  
+  
+  }
+  .errorName {
+  }
+  .App-link {
+    color: #61dafb;
+  }
+  /* Not found */
+  .Not-found-div {
+  
+  }
+  .not-found-header {
+  
+  }
+  .Not-found-div p {
+  
+  }
+  /* Preloader */
+  .preloader-div {
+  
+  }
+  .loading-header {
+  
+  }
+  /* Footer */
+  footer {
+    background-color: #282c34;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: ;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(5px + 1vmin);
+    color: rgb(240, 239, 239);
+    width: 100vw;
+    height: 60vh;
+  }
+  .footer-contact-div, .footer-about-div, .footer-navigation-div {
+    width: 40vw;
+    height: 15vh;
+  }
+  .contact-contents, .about-contents, .navigation-contents {
+    width: 300px;
+  }
+  .about-contents {
+    text-align: justify;
+  }
+  .contact-contents a, .navigation-contents a {
+  
+  }
+  .contact-contents a:hover, .navigation-contents a:hover {
+  
+  }
+  .icon {
+  
+  }
+  .icon:hover {
+  
+  }
+  
+  }
+  
