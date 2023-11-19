@@ -6,11 +6,18 @@ html {
   overflow-x: hidden;
 }
 .App {
-  text-align: center;
-  background-image: url('./components/icons/lib1.jpg');
+
+  background: linear-gradient(20deg, #d5a5e7, #6ed8aa);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 3s ease-in-out infinite;
+  -moz-animation: AnimationName 3s ease-in-out infinite;
+  animation: AnimationName 3s ease-in-out infinite;
+  /* background-image: url('./components/icons/lib1.jpg'); */
   color: white;
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 100vh;
   opacity: 10px; 
   backdrop-filter: blur(10px);
   z-index: 0;
@@ -30,8 +37,8 @@ html {
   width: 100vw;
 }
 .logo {
-  height: 250px;
-  width: 300px;
+  /* height: 250px;
+  width: 300px; */
 }
 .Nav-bar {
   display: flex;
@@ -112,10 +119,8 @@ html {
   box-shadow: #282c34 1px 3px 3px;
   opacity: 5;
   transition: opacity 0.3s ease-in-out;
-  height: 45vh;
-  width: 300px;
-  background: rgb(34,195,126);
-  background: radial-gradient(circle, rgba(34,195,126,1) 0%, rgba(225,235,132,1) 100%);
+  /* height: 45vh;
+  width: 300px; */
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -127,11 +132,6 @@ html {
 .card-div.show {
   opacity: 1;
 
-}
-.card-div:hover {
-  height: 50vh;
-  width: 350px;
-  transition: ease-in-out 0.5s;
 }
 .card-content {
   margin: 2px;
