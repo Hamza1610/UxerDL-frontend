@@ -1,30 +1,28 @@
 import React from "react";
-import "./App.css";
-import "./App.min.css";
-import "./App.min.mobile.css";
+// import "./App.css";
 import { BrowserRouter as Router, Routes as Switch, Route } from "react-router-dom";
-import Home from "./components/Home";
-import List from "./components/List";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Upload from "./components/Upload";
-import Search from "./components/Search";
-import NotFound from "./components/NotFound";
+import Home from "./components/Home/Home";
+import SignUp from "./components/AuthComponents/SignUp";
 
+import NotFound from "./components/NotFound";
+import Navigation from "./components/Navigation/Navigation";
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import SignIn from "./components/AuthComponents/SignIn";
+import Library from "./components/BookList/Library";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
+
         <Switch>
           <Route path="/" exact Component={Home} />
-          <Route path="/api/" exact Component={List} />
-          <Route path="/api/search" exact Component={Search} />
-          <Route path="/api/upload" exact Component={Upload} />
+          <Route path="/sign-up" exact Component={SignUp} />
+          <Route path="/sign-in" exact Component={SignIn} />
+          <Route path="/library" exact Component={Library} />
           <Route path="*" Component={NotFound} />
         </Switch>
-        <Footer />
       </div>
     </Router>
   );
