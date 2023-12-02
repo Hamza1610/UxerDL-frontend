@@ -3,10 +3,12 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useState } from 'react';
+import Navigation from "../Navigation/Navigation";
 import Carousel from 'react-bootstrap/Carousel';
 import ExampleCarouselImage from './logo.png';
 import './Home.css'
 import Button from 'react-bootstrap/Button';
+
 const Home = () => {
     const [index, setIndex] = useState(0);
 
@@ -16,6 +18,7 @@ const Home = () => {
     return (
 
         <Container fluid className='justify-content-center'>
+            <Navigation />
             <Row>
                 <Col>
                     <Carousel activeIndex={index} onSelect={handleSelect} data-bs-theme='light'>
