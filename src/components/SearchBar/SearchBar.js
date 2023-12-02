@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button'
 import { useState } from 'react';
-import Form from 'react-bootrap/Form';
 
 const SearchBar = (props) => {
     console.log(props);
@@ -12,14 +11,8 @@ const SearchBar = (props) => {
     const [searchText, setSearchText] = useState('')
 
     const handleSubmit = () => {
-        switch (props.section) {
-            case value:
-                
-                break;
-        
-            default:
-                break;
-        }
+
+        console.log('Submit');
     }
     return (
     <Container className='mb-2'>

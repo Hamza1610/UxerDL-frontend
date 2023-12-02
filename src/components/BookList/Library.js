@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Cards from "./Cards";
 import SearchBar from "../SearchBar/SearchBar";
 import CustomModal from '../modal';
-import {Books} from '../../apis/Books'
+// import {Books} from '../../apis/Books'
 const Library = () => {
 
     const [loading, setLoading] = useState(true);
@@ -16,8 +16,6 @@ const Library = () => {
     const handleShow = () => setShow(true);
     const [key, setKey] = useState('trending');
      
-    const mybook = new Books()
-    console.log(mybook);
     return (
         <Container >
             <CustomModal close={handleClose} show={show}/>
