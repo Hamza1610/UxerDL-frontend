@@ -17,13 +17,16 @@ const Library = () => {
 
     const [loading, setLoading] = useState(true);
     const [show, setShow] = useState(false);
+    const [modalContents, setModalContents] = useState({});
+
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const handleContents = (item) => setModalContents(item);
     const [key, setKey] = useState('trending');
      
     return (
         <Container >
-            <CustomModal close={handleClose} show={show}/>
+            <CustomModal close={handleClose} show={show} contents= {handleContents} />
             <Row>
                 <Col sm={12}>
                     <Row>

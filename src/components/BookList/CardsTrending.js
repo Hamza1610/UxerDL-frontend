@@ -19,8 +19,9 @@ const Trending = (props) => {
     useEffect(()=> {
      fetchBooks()
     },[])
-    const handleClick = () => {
+    const handleClick = (item) => {
         // returns more function
+        console.log('Here is the', item);
         return props.more();
    }
    const renderImg = (link) => {
@@ -47,7 +48,7 @@ const Trending = (props) => {
                             <p><b>Authors:</b> {item.volumeInfo.authors}</p>
                             <p><b>Category:</b> {item.volumeInfo.categories}</p>
                         </Card.Text>
-                        <Button variant="primary" onClick={handleClick}>More details</Button>
+                        <Button variant="primary" onClick={handleClick(item)}>More details</Button>
                     </Card.Body>
                 </Card>     
             ))
