@@ -4,6 +4,7 @@ import logo from './logo.png'
 import { useState } from 'react';
 import Books from "../../apis/Books";
 import { useEffect } from 'react';
+import CustomModal from '../modal';
 
 const Trending = (props) => {
 
@@ -11,19 +12,30 @@ const Trending = (props) => {
     const BookClass = new Books();
     const [booksContent, setBooksContent] = useState([])
 
+    const [show, setShow] = useState(false);
+    const [modalContents, setModalContents] = useState({});
+    const [content, setContent] = useState({})
+    
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     const fetchBooks = async () => {
         const data = await  BookClass.get_trending_books()
         // data.items.map((item)=> console.log(item.volumeInfo.imageLinks.thumbnail))
         setBooksContent(data.items)
     };
+    
     useEffect(()=> {
      fetchBooks()
     },[])
+
     const handleClick = (item) => {
-        // returns more function
-        console.log('Here is the', item);
-        return props.more();
+        // returns more function 
+        setContent(item)
+        console.log(item);  
+        handleShow()
    }
+
    const renderImg = (link) => {
         try {
             return (<Card.Img variant="top" src={link.imageLinks.thumbnail} alt='Book Image' />)
@@ -36,6 +48,7 @@ const Trending = (props) => {
     }
   return (
     <>
+        <CustomModal close={handleClose} show={show} contents= {content} />
         {
             booksContent && booksContent.map((item) => (
                 // map card components
@@ -48,7 +61,7 @@ const Trending = (props) => {
                             <p><b>Authors:</b> {item.volumeInfo.authors}</p>
                             <p><b>Category:</b> {item.volumeInfo.categories}</p>
                         </Card.Text>
-                        <Button variant="primary" onClick={handleClick(item)}>More details</Button>
+                        <Button variant="primary" onClick={()=> handleClick(item)}>More details</Button>
                     </Card.Body>
                 </Card>     
             ))
