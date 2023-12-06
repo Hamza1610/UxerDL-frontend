@@ -89,10 +89,8 @@ const Library = () => {
                                 title="Personal library"
                                 eventKey="personal"   
                             >
-                                <Row>
                                 <Row className="justify-content-center" style={{overflowY: "scroll", height: "87vh"}}>
-                                    <Personal  shelf='personal'/>
-                                </Row>
+                                     <Personal  shelf='personal'/>
                                 </Row>
                             </Tab>
                         </Tabs>
