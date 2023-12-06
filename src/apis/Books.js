@@ -41,7 +41,7 @@ class Books {
       }
     }
   
-    async get_latest_book() {
+    async get_latest_books() {
       const url = `https://www.googleapis.com/books/v1/volumes?q=fiction,nonfiction&orderBy=newest`;
 
       const response = await fetch(url)
