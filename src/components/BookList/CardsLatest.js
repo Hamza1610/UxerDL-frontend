@@ -4,23 +4,42 @@ import logo from './logo.png'
 import { useState } from 'react';
 import Books from "../../apis/Books";
 import { useEffect } from 'react';
+import CustomModal from '../modal';
+import Preloader from '../preloader';
 
 const Latest = (props) => {
+
+    
     const BookClass = new Books();
     const [booksContent, setBooksContent] = useState([])
 
+    const [show, setShow] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [content, setContent] = useState({})
+    
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     const fetchBooks = async () => {
-        const data = await  BookClass.get_latest_book()
-        // data.items.map((item)=> console.log(item.volumeInfo.imageLinks.thumbnail))
-        setBooksContent(data.items)
+        const data = await  BookClass.get_latest_books()
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(false)
+            setBooksContent(data.items)
+        }, 3000);
     };
+    
     useEffect(()=> {
      fetchBooks()
     },[])
-    const handleClick = () => {
-        // returns more function
-        return props.more();
+
+    const handleClick = (item) => {
+        // returns more function 
+        setContent(item)
+        console.log(item);  
+        handleShow()
    }
+
    const renderImg = (link) => {
         try {
             return (<Card.Img variant="top" src={link.imageLinks.thumbnail} alt='Book Image' />)
@@ -33,6 +52,8 @@ const Latest = (props) => {
     }
   return (
     <>
+        <CustomModal close={handleClose} show={show} contents= {content} />
+        {loading && (<Preloader />)}
         {
             booksContent && booksContent.map((item) => (
                 // map card components
@@ -45,11 +66,12 @@ const Latest = (props) => {
                             <p><b>Authors:</b> {item.volumeInfo.authors}</p>
                             <p><b>Category:</b> {item.volumeInfo.categories}</p>
                         </Card.Text>
-                        <Button variant="primary" onClick={handleClick}>More details</Button>
+                        <Button variant="primary" onClick={()=> handleClick(item)}>More details</Button>
                     </Card.Body>
                 </Card>     
             ))
         }
     </>
-    )}
+    )
+}
 export default Latest;

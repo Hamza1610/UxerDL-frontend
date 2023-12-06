@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Books from "../../apis/Books";
 import { useEffect } from 'react';
 import CustomModal from '../modal';
+import Preloader from '../preloader';
 
 const Trending = (props) => {
 
@@ -13,7 +14,7 @@ const Trending = (props) => {
     const [booksContent, setBooksContent] = useState([])
 
     const [show, setShow] = useState(false);
-    const [modalContents, setModalContents] = useState({});
+    const [loading, setLoading] = useState(false);
     const [content, setContent] = useState({})
     
     const handleClose = () => setShow(false);
@@ -21,8 +22,11 @@ const Trending = (props) => {
 
     const fetchBooks = async () => {
         const data = await  BookClass.get_trending_books()
-        // data.items.map((item)=> console.log(item.volumeInfo.imageLinks.thumbnail))
-        setBooksContent(data.items)
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(false)
+            setBooksContent(data.items)
+        }, 3000);
     };
     
     useEffect(()=> {
@@ -49,6 +53,7 @@ const Trending = (props) => {
   return (
     <>
         <CustomModal close={handleClose} show={show} contents= {content} />
+        {loading && (<Preloader />)}
         {
             booksContent && booksContent.map((item) => (
                 // map card components
