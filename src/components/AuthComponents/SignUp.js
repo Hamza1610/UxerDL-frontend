@@ -1,5 +1,5 @@
 import { auth } from './firebase-config';
-import { onAuthStateChanged } from "firebase/auth";
+import { FacebookAuthProvider, onAuthStateChanged } from "firebase/auth";
 import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 
 import Form from 'react-bootstrap/Form';
@@ -7,7 +7,8 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import { Navigate } from 'react-router-dom';
 
 const SignUp =  () => {
 
@@ -17,23 +18,42 @@ const SignUp =  () => {
     const [error, setError] = useState('');
 
     const handleGoogleSignUp = async () => {
-        const provider = new GoogleAuthProvider();
+
         try {
+            const provider = new GoogleAuthProvider();
             const userCredential = await signInWithPopup(auth, provider);
             const user = userCredential.user;
             console.log('Google user:', user);
             setError('');
             console.log("Registered with Google successfully");
+            Navigate('/library')
         } catch (error) {
             console.log('Google error:', error.message);
             setError(error.message);
         }
     };
 
+    const handleFacebookSignUp = async () => {
+
+        try {
+            const provider = new FacebookAuthProvider();
+            const userCredential = await signInWithPopup(auth, provider);
+            const user = userCredential.user;
+            console.log('Facebook user:', user);
+            setError('');
+            console.log("Registered with Facebook successfully");
+            Navigate('/library')
+        } catch (error) {
+            console.log('Facebook error:', error.message);
+            setError(error.message);
+        }
+    };
+
     const handleSubmit = async(e) => {
         e.preventDefault();
-        if (password === confirmPassword) {
-            try {
+
+        try {
+            if (password === confirmPassword) {
                 const userCredential = await createUserWithEmailAndPassword(auth, email, password);
                 const user = userCredential.user;
                 console.log('Email/Password user:', user);
@@ -45,16 +65,16 @@ const SignUp =  () => {
                 onAuthStateChanged(auth, (user) => {
                     if (user) {
                         console.log(user);
+                        Navigate('/library')
                     }
                 });
-    
-            } catch (error) {
-                console.log('Email/Password error:', error.message);
-                setError(error.message);
+            } else {
+                setError('Passowrd and Confirm password does not match')
             }
-        }
-        else {
-            setError('Passowrd and Confirm password does not match')
+    
+        } catch (error) {
+            console.log('Email/Password error:', error.message);
+            setError(error.message);
         }
     }
 
@@ -67,9 +87,9 @@ const SignUp =  () => {
             </Row>
             <Row className='align-items-center h-75 w-100 justify-content-center' md={4} >
                 <Col >
-                    <Form >
+                    <Form onSubmit={handleSubmit}>
                         <Form.Label style={{fontSize: '1.3em'}}>Sign up your account: </Form.Label>
-                        {error && (<p>{error}</p>) }
+                        {error && (<p style={{color: 'crimson'}}>{error}</p>) }
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
                             <Form.Control
@@ -77,8 +97,9 @@ const SignUp =  () => {
                                 size='lg'
                                 type="email"
                                 placeholder="Enter email"
-                                className='w-100'
+                                className='w-100 email'
                                 onChange={(e) => setEmail(e.target.value)}
+                                required
                             />
                         </Form.Group>
             
@@ -89,12 +110,13 @@ const SignUp =  () => {
                                 size='lg'
                                 type="password"
                                 placeholder="Password"
-                                className='w-100'
+                                className='w-100 password'
                                 onChange={(e) => setPassword(e.target.value)}
+                                required
                             />
                         </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
                             <Form.Label>Confirm password</Form.Label>
                             <Form.Control
                                 name='confirm'
@@ -103,6 +125,7 @@ const SignUp =  () => {
                                 placeholder="confirm password"
                                 className='w-100'
                                 onChange={(e) => setConfirmPassword(e.target.value)}
+                                required
                             />
                         </Form.Group>
 
@@ -123,7 +146,12 @@ const SignUp =  () => {
                                 className='m-3'
                                 onClick={handleGoogleSignUp}
                                 >Google</Button>
-                            <Button size='lg' type='submit' className='m-3'>Facebook</Button>
+                            <Button
+                                size='lg'
+                                type='submit'
+                                className='m-3'
+                                onClick={handleFacebookSignUp}
+                                >Facebook</Button>
                         </Form.Group>
                     </Form>
                 </Col>
