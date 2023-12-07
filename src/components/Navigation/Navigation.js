@@ -23,9 +23,9 @@ const Navigation = () => {
             </Offcanvas.Header>
             <Offcanvas.Body className='justify-content-end'>
               <Nav fill variant='pills' defaultActiveKey='/'>
-                <Nav.Link  href='/'className='me-3' style={offcanvasStyle}>Home</Nav.Link>
-                <Nav.Link href='#books-categories' className='me-3' style={offcanvasStyle}>Book categories</Nav.Link>
-                <Nav.Link href='#about-uxerdl' className='me-4' style={offcanvasStyle}>About</Nav.Link>
+                <Nav.Link  href='#'className='me-3' style={offcanvasStyle}>Home</Nav.Link>
+                <Nav.Link href='#categories' className='me-3' style={offcanvasStyle}>Book categories</Nav.Link>
+                <Nav.Link href='#about' className='me-4' style={offcanvasStyle}>About</Nav.Link>
                 <Button href='/sign-up' bg="primary" as='a' variant='outline-primary' style={offcanvasStyle}>Sign up</Button>
               </Nav>
             </Offcanvas.Body>
