@@ -1,166 +1,34 @@
-.Home-div{
-    background: linear-gradient(118deg, #307fdb, #30db91);
-    background-size: 400% 400%;
-
-    -webkit-animation: AnimationName 10s ease-in-out infinite;
-    -moz-animation: AnimationName 10s ease-in-out infinite;
-    animation: AnimationName 10s ease-in-out infinite;
-}
-
-@-webkit-keyframes AnimationName {
-    0%{background-position:36% 0%}
-    50%{background-position:65% 100%}
-    100%{background-position:36% 0%}
-}
-@-moz-keyframes AnimationName {
-    0%{background-position:36% 0%}
-    50%{background-position:65% 100%}
-    100%{background-position:36% 0%}
-}
-@keyframes AnimationName {
-    0%{background-position:36% 0%}
-    50%{background-position:65% 100%}
-    100%{background-position:36% 0%}
-}
-.Home-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100vw;
-}
-.home-header {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url();
-}
-.home-header h1 {
-    color: white;
-    font-size: 5em;
-}
-.home-header p {
-    color: white;
-    font-size: 2em;
-}
-
-.home-content {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;   
-}
-.about-div {
-    width: 80vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-}
-.about-home {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    text-align: left;
-    font-size: large;
-}
-.about-home {
-    font-size: 1.3em;
-}
-.features-div {
-    width: 80vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.features-home {
-    color: black;
-    width: 80vw;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;    
-}
-.feature {
-    border-radius: 10px;
-    box-shadow: #282c34 1px 5px 5px;
-    margin: 10px;
-    padding: 5px;
-    width: 350px;
-    height: 450px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgb(34,195,126);
-    background: radial-gradient(circle, rgba(34,195,126,1) 0%, rgba(225,235,132,1) 100%);
-}
-.feature-image {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-}
-.explore-button {
-    text-decoration: none;
-    border-radius: 10px;
-    padding: 10px;
-    color: white;
-    background-color: #282c34;
-    font-weight: bold;
-}
-.explore-button:hover {
-    color: black;
-    background-color: white;
-    transition: ease-in-out 1s;
-}
-.developer-div {
-    width: 80vw;
-    height: 700px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;    
-}
-.developer-home {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.developer-content {
-    width: 80vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-.developer-image {
-    width: 300px;
-    height: 400px;
-}
-.developer-intro {
-    font-size: 1.3em;
-    margin-left: 10px;
-    text-align: justify;
-    
-}
-.employ-me {
-    font-size: 1.3em;
-    width: 80vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.message-platform {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-}
+scroll-timeline {
+    --scroll-y: 0;
+  }
+  
+  .box-1, .box-3 {
+    animation: fadeInLeft 3s ease-out;
+    animation-timeline: var(--scroll-y);
+  }
+  .box-2 {
+    animation: fadeInRight 3s ease-out;
+    animation-timeline: var(--scroll-y);
+  }
+  
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  
