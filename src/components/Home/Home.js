@@ -80,7 +80,7 @@ Whether you're an avid reader, a dedicated student, or someone simply looking to
                     </div>
                 </Col>
             </Row>
-            <Row className='m-5' className='box-3'>
+            <Row className='m-5 box-3'>
                 <h1 id='categories'>Book Categories at UxerDL</h1>
                 <div style={{width:'75vw'}}>
                 <p style={{fontSize:'1.3rem', textAlign: 'justify'}}>Discover the diverse tapestry of literature within our carefully crafted book categories. Each category is a doorway to a unique realm of storytelling, knowledge, and inspiration. Here are some of the captivating categories awaiting your exploration:</p>
