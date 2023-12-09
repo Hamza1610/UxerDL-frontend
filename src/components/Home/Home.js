@@ -131,7 +131,7 @@ Whether you're an avid reader, a dedicated student, or someone simply looking to
                 <Container>
                     <Row>
                         <Col className="text-center py-3">
-                            <p>&copy; {new Date().getFullYear()} [Your Project Name]. All rights reserved.</p>
+                            <p>&copy; {new Date().getFullYear()} UxerDL. All rights reserved.</p>
                         </Col>
                     </Row>
                 </Container>
